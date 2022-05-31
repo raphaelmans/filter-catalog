@@ -4,7 +4,17 @@ on:
     branches:
       - 'main'
 jobs:
+  run-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: npm install
+      - run: npm run build
   build-docker:
+    needs: run-build
     runs-on: ubuntu-latest
     steps:
       -
@@ -25,12 +35,11 @@ jobs:
       -
         name: Build and push
         uses: docker/build-push-action@v3
-        env:
-          IMAGE_TAG: raphaelmans/filter-catalog-app:latest
         with:
           context: .
           push: true
-          tags: $IMAGE_TAG
+          file: Dockerfile.prod
+          tags: raphaelmans/filter-catalog-app
   deploy:
     needs: build-docker
     runs-on: ubuntu-latest

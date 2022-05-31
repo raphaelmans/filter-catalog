@@ -17,7 +17,9 @@ function App() {
           rel="noopener noreferrer"
         >
           Mansueto's Test Project<br/>
-          Init workflow changes
+          Init workflow changes<br/>
+          Verify Secret Key is okay<br/>
+          Wrong Secret Key detected
         </a>
       </header>
     </div>
