@@ -16,7 +16,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Mansueto's Test Project<br/>
+          Init workflow changes
         </a>
       </header>
     </div>
