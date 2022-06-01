@@ -1,7 +1,9 @@
-Libraries Used:
+### Libraries Used
 
-https://tailwindcss.com/docs/guides/create-react-app
-https://redux-toolkit.js.org/
+Front end
+
+- https://tailwindcss.com/docs/guides/create-react-app
+- https://redux-toolkit.js.org/
 
 DevOps:
 
