@@ -1,4 +1,5 @@
 export default interface ARFilter {
+    id: string;
     filterName: string;
     resourceLink: string;
     rating: number;
