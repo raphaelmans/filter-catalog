@@ -41,7 +41,7 @@ export const fetchARFilterList = createAsyncThunk('catalog/fetchARFilterList', a
 const sortByFilter: CaseReducer<CatalogStateI, PayloadAction<SortBy>> = (state, action) => {
     switch (action.payload) {
         case 'Most Viewed':
-            state.filteredList.sort((ar1, ar2) => ar1.views - ar2.views);
+            state.filteredList.sort((ar1, ar2) => (ar1.views > ar2.views ? -1 : 1));
             break;
         case 'Most Likes':
             state.filteredList.sort((ar1, ar2) => (ar1.rating > ar2.rating ? -1 : 1));
