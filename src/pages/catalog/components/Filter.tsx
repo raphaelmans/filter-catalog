@@ -1,21 +1,19 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { getSortFilters } from 'services/catalog';
+import React, { useEffect } from 'react';
+import { fetchFilters } from 'redux/slices/catalog';
+import { useDispatch, useSelector } from 'redux/store';
 import FilterDesktopMenu from './FilterDesktopMenu';
-import MobileFilter from './MobileFilter';
 import SortFilter from './SortFilter';
 
-const Filter = () => {
+const Filter: React.FC = () => {
+    const { filters } = useSelector((state) => state.catalog);
+    const dispatch = useDispatch();
+
     useEffect(() => {
-        const test = async () => {
-            const data = await getSortFilters();
-            return data;
-        };
-        console.log(test());
+        dispatch(fetchFilters());
     }, []);
+
     return (
         <>
-            <MobileFilter />
             <div className="max-w-3xl mx-auto px-4 text-center sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="py-24">
                     <h1 className="text-4xl font-extrabold tracking-tight text-gray-900">SOCIAL AR FILTERS</h1>
@@ -32,17 +30,10 @@ const Filter = () => {
                     </h2>
 
                     <div className="flex items-center justify-between">
-                        <SortFilter sortBy={['Most Popular']} />
-                        {/* Filter button mobile view */}
-                        <button
-                            type="button"
-                            className="inline-block text-sm font-medium text-gray-700 hover:text-gray-900 sm:hidden"
-                        >
-                            Filters
-                        </button>
+                        <SortFilter sortBy={filters.sortBy ?? []} />
 
-                        <div className="hidden sm:flex sm:items-baseline sm:space-x-8">
-                            <FilterDesktopMenu title="Category" categories={['Halloween', 'Christmas']} />
+                        <div className="flex sm:items-baseline sm:space-x-8">
+                            <FilterDesktopMenu title="Category" categories={filters.categories ?? []} />
                         </div>
                     </div>
                 </section>

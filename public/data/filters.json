@@ -1,5 +1,6 @@
 {
     "data": {
-        "categories": ["Christmas", "Halloween"]
+        "categories": ["Christmas", "Halloween"],
+        "sortBy": ["Newest", "Most Popular", "Most Viewed"]
     }
 }

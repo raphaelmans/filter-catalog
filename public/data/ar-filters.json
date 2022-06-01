@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "filterName": "Box Reveal Turtle",
+            "resourceLink": "/boxreveal-turtle.gif",
+            "rating": 4,
+            "description": "Lorem ipsum",
+            "createdAt": "01/21/2022",
+            "premium": false,
+            "views": 100,
+            "categories": ["funny", "turtle"]
+        },
+        {
+            "filterName": "Catch Game Turtle",
+            "resourceLink": "/catchgame-turtle.gif",
+            "rating": 5,
+            "description": "Lorem ipsum",
+            "createdAt": "03/15/2022",
+            "premium": true,
+            "views": 12341,
+            "categories": ["game", "turtle"]
+        },
+        {
+            "filterName": "Glasses Turtle",
+            "resourceLink": "/glasses-turtle.gif",
+            "rating": 4,
+            "description": "Lorem ipsum",
+            "createdAt": "07/01/2020",
+            "premium": false,
+            "views": 32132,
+            "categories": ["cool", "turtle", "glasses"]
+        },
+        {
+            "filterName": "Particles Turtle",
+            "resourceLink": "/particles_turtle.gif",
+            "rating": 4,
+            "description": "Lorem ipsum",
+            "createdAt": "02/22/2022",
+            "premium": false,
+            "views": 232,
+            "categories": ["background", "turtle"]
+        }
+    ]
+}
