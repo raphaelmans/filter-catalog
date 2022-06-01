@@ -11,7 +11,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '14'
-      - run: npm install
+      - run: npm ci
+      - run: npm run format
+      - run: npm run lint
       - run: npm run build
   build-docker:
     needs: run-build
