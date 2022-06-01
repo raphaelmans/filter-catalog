@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { actions } from 'redux/slices/catalog';
+import { useDispatch } from 'redux/store';
+import { SortBy } from 'types/sort-by';
 
 interface SortFilterI {
     sortBy: string[];
@@ -6,6 +9,7 @@ interface SortFilterI {
 
 const SortFilter: React.FC<SortFilterI> = ({ sortBy }) => {
     const [open, setOpen] = useState(false);
+    const dispatch = useDispatch();
     return (
         <div className="relative z-10 inline-block text-left">
             <div>
@@ -19,7 +23,7 @@ const SortFilter: React.FC<SortFilterI> = ({ sortBy }) => {
                 >
                     Sort
                     <img
-                        src="/svgs/caret-down.svg"
+                        src={`/svgs/caret-${open ? 'up' : 'down'}.svg`}
                         className="flex-shrink-0 -mr-1 ml-1 h-5 w-5 text-gray-400 group-hover:text-gray-500"
                     />
                 </button>
@@ -37,16 +41,16 @@ const SortFilter: React.FC<SortFilterI> = ({ sortBy }) => {
             >
                 <div className="py-1" role="none">
                     {sortBy.map((by) => (
-                        <a
-                            href="#"
+                        <button
                             className="block px-4 py-2 text-sm font-medium text-gray-900"
                             role="menuitem"
                             tabIndex={-1}
                             id="mobile-menu-item-0"
                             key={by}
+                            onClick={() => dispatch(actions.sortByFilter(by as SortBy))}
                         >
                             {by}
-                        </a>
+                        </button>
                     ))}
                 </div>
             </div>

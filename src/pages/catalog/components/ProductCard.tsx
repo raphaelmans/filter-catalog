@@ -18,9 +18,14 @@ const ProductCard: React.FC<ProductCardI> = ({ arFilter }) => {
             </div>
             <div className="mt-4 flex items-center justify-between text-base font-medium text-gray-900">
                 <h3>{arFilter.filterName}</h3>
-                <p className="text-sky-600">{arFilter.premium ? 'Premium' : 'Free'}</p>
+                <p className={arFilter.premium ? 'text-sky-600' : 'text-emerald-500'}>
+                    {arFilter.premium ? 'Premium' : 'Free'}
+                </p>
             </div>
-            <p className="mt-1 text-sm italic text-gray-500">{arFilter.categories.join(',')}</p>
+            <div className="mt-1 text-sm text-gray-700">
+                <p className=" italic ">{arFilter.categories.join(',')}</p>
+                <p>{arFilter.views} views</p>
+            </div>
         </Link>
     );
 };

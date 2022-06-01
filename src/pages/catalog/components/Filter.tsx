@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { fetchFilters } from 'redux/slices/catalog';
 import { useDispatch, useSelector } from 'redux/store';
-import FilterDesktopMenu from './FilterDesktopMenu';
+import CategoryFilter from './CategoryFilter';
 import SortFilter from './SortFilter';
 
 const Filter: React.FC = () => {
@@ -33,7 +33,7 @@ const Filter: React.FC = () => {
                         <SortFilter sortBy={filters.sortBy ?? []} />
 
                         <div className="flex sm:items-baseline sm:space-x-8">
-                            <FilterDesktopMenu title="Category" categories={filters.categories ?? []} />
+                            <CategoryFilter title="Category" categories={filters.categories ?? []} />
                         </div>
                     </div>
                 </section>
